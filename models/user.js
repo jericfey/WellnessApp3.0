@@ -3,9 +3,28 @@ const mongoose = require("mongoose");
 //Schema
 const Schema = mongoose.Schema;
 const UserSchema = new Schema({
-  firstname: String,
-  lastname: String,
-  email: String,
+  firstname: {
+    type: String,
+    lowercase: true,
+    required: [true, "can't be blank"],
+    match: [/^[a-zA-Z0-9]+$/, "is invalid"],
+    index: true,
+  },
+  lastname: {
+    type: String,
+    lowercase: true,
+    required: [true, "can't be blank"],
+    match: [/^[a-zA-Z0-9]+$/, "is invalid"],
+  },
+  email: {
+    type: String,
+    lowercase: true,
+    required: [true, "can't be blank"],
+  },
+  password: { type: String, required: true },
+  goalweight: {
+    type: Number,
+  },
   date: {
     type: String,
     default: Date.now(),

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const Dataform = () => {
@@ -6,6 +6,8 @@ const Dataform = () => {
     firstname: "",
     lastname: "",
     email: "",
+    password: "",
+    goalweight: "",
   });
 
   function handleInputChange(event) {
@@ -22,6 +24,8 @@ const Dataform = () => {
       firstname: formObject.firstname,
       lastname: formObject.lastname,
       email: formObject.email,
+      password: formObject.password,
+      goalweight: formObject.goalweight,
     };
     axios({
       url: "/api/newuser",
@@ -42,6 +46,8 @@ const Dataform = () => {
       firstname: "",
       lastname: "",
       email: "",
+      password: "",
+      goalweight: "",
     });
   };
 
@@ -73,6 +79,24 @@ const Dataform = () => {
             name="email"
             placeholder="email@email.com"
             value={formObject.email}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-input">
+          <input
+            type="text"
+            name="password"
+            placeholder="Create password"
+            value={formObject.password}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-input">
+          <input
+            type="text"
+            name="goalweight"
+            placeholder="goalweight"
+            value={formObject.goalweight}
             onChange={handleInputChange}
           />
         </div>
