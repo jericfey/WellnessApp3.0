@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import "./App.css";
+import React from "react";
 import axios from "axios";
 
-function App() {
+const Dataform = () => {
   const [formObject, setFormObject] = useState({
     firstname: "",
     lastname: "",
@@ -45,6 +44,7 @@ function App() {
       email: "",
     });
   };
+
   return (
     <div>
       <h1>Root</h1>
@@ -80,6 +80,6 @@ function App() {
       </form>
     </div>
   );
-}
+};
 
-export default App;
+export default Dataform;
