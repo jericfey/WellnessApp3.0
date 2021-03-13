@@ -17,7 +17,6 @@ const Data = () => {
       .catch((err) => console.log(err));
   }
 
-
   return (
     <div>
       {users.length > 0 ? (
@@ -28,7 +27,7 @@ const Data = () => {
                 <h3>
                   {user.firstname} {user.lastname}
                 </h3>
-                <h3></h3>
+
                 <p>{user.email}</p>
               </div>
             );

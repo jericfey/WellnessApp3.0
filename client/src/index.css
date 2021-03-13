@@ -5,7 +5,7 @@ body {
 .home {
   background-image: url("./assets/background.jpg");
   background-size: cover;
-  height: 100vh;
+  height: 115vh;
   justify-content: center;
 }
 .logoff {
