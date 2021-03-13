@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Dataform = () => {
+const Userform = () => {
   const [formObject, setFormObject] = useState({
     firstname: "",
     lastname: "",
@@ -53,7 +53,7 @@ const Dataform = () => {
 
   return (
     <div>
-      <h1>Root</h1>
+      <h1>SignUp</h1>
       <form onSubmit={createNewUser}>
         <div className="form-input">
           <input
@@ -106,4 +106,4 @@ const Dataform = () => {
   );
 };
 
-export default Dataform;
+export default Userform;

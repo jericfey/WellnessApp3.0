@@ -2,34 +2,34 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 
 const Data = () => {
-  const [users, setUsers] = useState([]);
+  const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    getUsers();
+    getWorkouts();
   }, []);
 
-  function getUsers() {
-    API.getUsers()
+  function getWorkouts() {
+    API.getWorkouts()
       .then((response) => {
-        setUsers(response.data);
+        setWorkouts(response.data);
         console.log("Data has been received from the DB.");
       })
       .catch((err) => console.log(err));
   }
 
-
   return (
     <div>
-      {users.length > 0 ? (
+      {workouts.length > 0 ? (
         <div>
-          {users.map((user) => {
+          {workouts.map((workout) => {
             return (
-              <div key={user.index}>
-                <h3>
-                  {user.firstname} {user.lastname}
-                </h3>
+              <div key={workout.index}>
+                <h3>{workout.name}</h3>
                 <h3></h3>
-                <p>{user.email}</p>
+                <p>Duration: {workout.duration}</p> |
+                <p>Weight: {workout.weight}</p>
+                <p>Reps: {workout.reps}</p> | <p>Sets: {workout.sets}</p>
+                <br />
               </div>
             );
           })}
