@@ -28,7 +28,7 @@ const Dataform = () => {
       goalweight: formObject.goalweight,
     };
     axios({
-      url: "/api/newuser",
+      url: "/api/users",
       method: "POST",
       data: payload,
     })

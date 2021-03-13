@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 //Schema
 const Schema = mongoose.Schema;
-const UserSchema = new Schema({
+const userSchema = new Schema({
   firstname: {
     type: String,
     lowercase: true,
@@ -25,13 +25,17 @@ const UserSchema = new Schema({
   goalweight: {
     type: Number,
   },
+  loggedin: {
+    type: Boolean,
+    default: false,
+  },
   date: {
-    type: String,
-    default: Date.now(),
+    type: Date,
+    default: Date.now,
   },
 });
 
 //Model of user going to user collection
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
