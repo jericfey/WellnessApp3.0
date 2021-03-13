@@ -1,14 +1,19 @@
 import React from "react";
+import TopCards from "../components/TopCards";
 
+import Sidebar from "../components/Sidebar/sidebar";
+import ToDo from "../components/ToDo/todo";
+import UserCalendar from "../components/Calendar/Calendar";
 
 
 function Dashboard() {
   return (
-
     <div>
-      <h2>Dashboard Page</h2>
+      <TopCards />
+      <ToDo />
+      <Sidebar />
+      <UserCalendar />
     </div>
-
   );
 }
 
