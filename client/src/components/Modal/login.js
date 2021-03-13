@@ -5,7 +5,6 @@ import {
   Divider,
   Form,
   Grid,
-  Segment,
   Modal,
   Header,
 } from "semantic-ui-react";
