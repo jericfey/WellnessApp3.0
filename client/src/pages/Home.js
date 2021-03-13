@@ -13,7 +13,7 @@ function Home() {
           <img
             src={logo}
             alt="logo"
-            style={{ height: "100%", padding: "2em 5em" }}
+            style={{ height: "100%", padding: "2em 3em" }}
             className="logo"
           />
           <Header
