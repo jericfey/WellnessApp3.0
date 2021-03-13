@@ -21,7 +21,6 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/team" component={Team} />
           <Route exact path="/dashboard" component={Dashboard} />
-
           <Route exact path="/Userform" component={Userform} />
           <Route exact path="/user" component={Users} />
           <Route exact path="/Workoutform" component={Workoutform} />

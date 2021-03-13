@@ -1,45 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap");
-
 body {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
-  background-image: url("./assets/background.jpg");
 }
 
-.login2 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: white;
-  margin-bottom: 10%;
+.home {
+  background-image: url("./assets/background.jpeg");
+  background-size: cover;
+  height: 100vh;
+  justify-content: center;
 }
 
-.healtharticles {
-  position: absolute;
-  right: 2%;
-  font-size: small;
-  margin-top: 50px;
+.todo {
+  margin-top: 5%;
 }
 
-.snippet {
-  position: absolute;
-  left: 2%;
-  font-size: small;
-  margin-top: 50px;
-}
 .logo {
-  margin-bottom: -10%;
-}
-.title {
-  position: absolute;
-  top: 0.5em;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  text-align: center;
-  font-family: "Crimson Text", serif;
+  margin-bottom: -5%;
+  border-radius: 25px;
 }
 
 .slogan {
@@ -49,11 +25,10 @@ body {
 
 .test {
   background-color: white;
-  border-radius: 25px;
 }
 
-.home {
-  background-image: url("./assets//background.jpg");
+.todolo {
+  background-color: cornflowerblue;
 }
 
 i {
