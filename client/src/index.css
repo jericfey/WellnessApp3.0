@@ -3,13 +3,18 @@ body {
 }
 
 .home {
-  background-image: url("./assets/background.jpg");
+  background-image: url("./assets/background.jpeg");
   background-size: cover;
-  height: 100vh;
+  height: 115vh;
+  position: relative;
+  top: -50px;
   justify-content: center;
 }
 .logoff {
   margin-top: 510px;
+}
+.cookie {
+  border-radius: 25px;
 }
 
 .todo {

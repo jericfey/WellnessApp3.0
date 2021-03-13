@@ -16,7 +16,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/team" component={Team} />

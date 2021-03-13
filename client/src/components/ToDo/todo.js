@@ -2,7 +2,6 @@ import React from "react";
 
 import {
   Card,
-  Feed,
   Grid,
   Container,
   Input,
