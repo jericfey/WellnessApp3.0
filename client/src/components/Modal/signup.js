@@ -1,6 +1,5 @@
-
 import React from "react";
-import { Button, Checkbox, Form, Header } from "semantic-ui-react";
+import { Button, Form, Header } from "semantic-ui-react";
 
 const SignupForm = () => (
   <Form>
@@ -25,6 +24,5 @@ const SignupForm = () => (
     <Button content="Signup" primary />
   </Form>
 );
-
 
 export default SignupForm;

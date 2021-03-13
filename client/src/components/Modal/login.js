@@ -8,7 +8,6 @@ import {
   Segment,
   Modal,
   Header,
-  Menu,
 } from "semantic-ui-react";
 
 function Dividerform() {
