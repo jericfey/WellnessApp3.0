@@ -17,7 +17,6 @@ const Data = () => {
       .catch((err) => console.log(err));
   }
 
-
   return (
     <div>
       {users.length > 0 ? (
