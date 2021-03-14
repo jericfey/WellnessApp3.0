@@ -4,7 +4,7 @@ import Signup from "./signup";
 import Login from "./login";
 
 function UserForm() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <Modal
@@ -13,13 +13,13 @@ function UserForm() {
       open={open}
       trigger={<Button>Lets Get Started!</Button>}
     >
-      <Segment placeholder className='cookie'>
-        <Grid columns={2} relaxed='very' stackable className='test'>
+      <Segment placeholder className="cookie">
+        <Grid columns={2} relaxed="very" stackable className="test">
           <Grid.Column>
             <Login />
           </Grid.Column>
 
-          <Grid.Column verticalAlign='middle'>
+          <Grid.Column verticalAlign="middle">
             <Signup />
           </Grid.Column>
         </Grid>

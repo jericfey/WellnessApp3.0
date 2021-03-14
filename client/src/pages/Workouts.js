@@ -25,7 +25,6 @@ const Data = () => {
             return (
               <div key={workout.index}>
                 <h3>{workout.name}</h3>
-                <h3></h3>
                 <p>Duration: {workout.duration}</p> |
                 <p>Weight: {workout.weight}</p>
                 <p>Reps: {workout.reps}</p> | <p>Sets: {workout.sets}</p>

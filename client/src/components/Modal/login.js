@@ -47,24 +47,26 @@ function Login() {
 
   return (
     <Form style={{ padding: "3em 5em" }}>
-      <Header textAlign='center'>Login</Header>
+      <Header textAlign="center">Login</Header>
       <Form.Input
-        name='email'
-        icon='mail'
-        iconPosition='left'
-        label='Email'
-        placeholder='Email'
-        type='text'
+        name="email"
+        icon="mail"
+        iconPosition="left"
+        label="Email"
+        placeholder="Email"
+        type="text"
+        onChange={handleInputChange}
       />
       <Form.Input
-        name='password'
-        icon='lock'
-        iconPosition='left'
-        label='Password'
-        type='password'
+        name="password"
+        icon="lock"
+        iconPosition="left"
+        label="Password"
+        type="password"
+        onChange={handleInputChange}
       />
 
-      <Button onClick={userLogin} content='Login' primary />
+      <Button onClick={userLogin} content="Login" primary />
     </Form>
   );
 }
