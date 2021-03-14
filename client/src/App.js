@@ -10,6 +10,11 @@ import Workouts from "./pages/Workouts";
 import Dashboard from "./pages/Dashboard";
 import "./App.css";
 import "./index.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { fas, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+
+library.add(fab, faGithub, faLinkedin, fas, faPaperPlane);
 
 function App() {
   return (

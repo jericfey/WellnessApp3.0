@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card, Image } from "semantic-ui-react";
 import "./teammembercards.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TeamMemberCards = () => (
   <Card.Group>
@@ -19,17 +20,17 @@ const TeamMemberCards = () => (
         <div className="ui">
           <a href="https://github.com/jericfey" target="about _blank">
             <Button inverted color="purple">
-              <i class="fab fa-github-square"></i>
+              <FontAwesomeIcon icon={["fab", "github"]} />
             </Button>
           </a>
           <a href="https://www.linkedin.com/in/jerifey/" target="about _blank">
             <Button inverted color="purple">
-              <i class="fab fa-linkedin"></i>
+              <FontAwesomeIcon icon={["fab", "linkedin"]} />
             </Button>
           </a>
           <a href="mailto:jericfey@gmail.com">
             <Button inverted color="purple">
-              <i class="fas fa-paper-plane"></i>
+              <FontAwesomeIcon icon={["fas", "paper-plane"]} />
             </Button>
           </a>
         </div>
@@ -50,17 +51,17 @@ const TeamMemberCards = () => (
         <div className="ui">
           <a href="https://github.com/gkuo0831" target="about _blank">
             <Button inverted color="blue">
-              <i class="fab fa-github-square"></i>
+              <FontAwesomeIcon icon={["fab", "github"]} />
             </Button>
           </a>
           <a href="https://www.linkedin.com/in/gkuo98" target="about _blank">
             <Button inverted color="blue">
-              <i class="fab fa-linkedin"></i>
+              <FontAwesomeIcon icon={["fab", "linkedin"]} />
             </Button>
           </a>
           <a href="mailto:gkuo98@gmail.com">
             <Button inverted color="blue">
-              <i class="fas fa-paper-plane"></i>
+              <FontAwesomeIcon icon={["fas", "paper-plane"]} />
             </Button>
           </a>
         </div>
@@ -81,7 +82,7 @@ const TeamMemberCards = () => (
         <div className="ui">
           <a href="https://github.com/gilorcilla" target="about _blank">
             <Button inverted color="teal">
-              <i class="fab fa-github-square"></i>
+              <FontAwesomeIcon icon={["fab", "github"]} />
             </Button>
           </a>
           <a
@@ -89,12 +90,12 @@ const TeamMemberCards = () => (
             target="about _blank"
           >
             <Button inverted color="teal">
-              <i class="fab fa-linkedin"></i>
+              <FontAwesomeIcon icon={["fab", "linkedin"]} />
             </Button>
           </a>
           <a href="mailto:mathnasiumcos@gmail.com">
             <Button inverted color="teal">
-              <i class="fas fa-paper-plane"></i>
+              <FontAwesomeIcon icon={["fas", "paper-plane"]} />
             </Button>
           </a>
         </div>
@@ -117,7 +118,7 @@ const TeamMemberCards = () => (
         <div className="ui">
           <a href="https://github.com/jamesosull16">
             <Button inverted color="orange">
-              <i class="fab fa-github-square" target="about _blank"></i>
+              <FontAwesomeIcon icon={["fab", "github"]} />
             </Button>
           </a>
           <a
@@ -125,12 +126,12 @@ const TeamMemberCards = () => (
             target="about _blank"
           >
             <Button inverted color="orange">
-              <i class="fab fa-linkedin"></i>
+              <FontAwesomeIcon icon={["fab", "linkedin"]} />
             </Button>
           </a>
           <a href="mailto:jamesosull16@gmail.com">
             <Button inverted color="orange">
-              <i class="fas fa-paper-plane"></i>
+              <FontAwesomeIcon icon={["fas", "paper-plane"]} />
             </Button>
           </a>
         </div>
