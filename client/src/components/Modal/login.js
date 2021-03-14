@@ -1,56 +1,73 @@
-import React from "react";
-import Signup from "./signup";
-import {
-  Button,
-  Divider,
-  Form,
-  Grid,
-  Modal,
-  Header,
-} from "semantic-ui-react";
+import React, { useState } from "react";
+import {useHistory} from "react-router-dom";
+import axios from "axios";
+import { Button, Form, Header } from "semantic-ui-react";
 
-function Dividerform() {
-  const [open, setOpen] = React.useState(false);
+function Login() {
+  const [formObject, setFormObject] = useState({
+    email: "",
+    password: "",
+  });
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({ ...formObject, [name]: value });
+  }
+
+  const userLogin = async (event) => {
+    event.preventDefault();
+
+    const loginPayload = {
+      email: formObject.email,
+      password: formObject.password,
+    };
+
+    axios({
+      url: "/api/users",
+      method: "POST",
+      data: loginPayload,
+    })
+      .then(() => {
+        //todo onsuccess redirect to dashboard
+        useHistory.push(".dashboard")
+        console.log("Login Successful");
+        resetLoginUserInputs();
+      })
+      .catch(() => {
+        console.log("Login Denied");
+      });
+  };
+
+  const resetLoginUserInputs = () => {
+    setFormObject({
+      email: "",
+      password: "",
+    });
+  };
+
+
   return (
-    <Modal
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}
-      open={open}
-      trigger={<Button>Lets Get Started!</Button>}
-    >
-      <Grid
-        columns={2}
-        relaxed="very"
-        stackable
-        className="test"
-        style={{ padding: "3em 3em" }}
-      >
-        <Grid.Column>
-          <Form style={{ padding: "3em 5em" }}>
-            <Header textAlign="center">Login</Header>
-            <Form.Input
-              icon="mail"
-              iconPosition="left"
-              label="Email"
-              placeholder="Email"
-            />
-            <Form.Input
-              icon="lock"
-              iconPosition="left"
-              label="Password"
-              type="password"
-            />
+    <Form style={{ padding: "3em 5em" }}>
+      <Header textAlign='center'>Login</Header>
+      <Form.Input
+        name='email'
+        icon='mail'
+        iconPosition='left'
+        label='Email'
+        placeholder='Email'
+        type='text'
+      />
+      <Form.Input
+        name='password'
+        icon='lock'
+        iconPosition='left'
+        label='Password'
+        type='password'
+      />
 
-            <Button content="Login" primary />
-          </Form>
-        </Grid.Column>
-
-        <Grid.Column verticalAlign="middle">
-          <Signup />
-        </Grid.Column>
-      </Grid>
-      <Divider vertical>Or</Divider>
-    </Modal>
+      <Button onClick={userLogin} content='Login' primary />
+    </Form>
   );
 }
-export default Dividerform;
+
+export default Login;
