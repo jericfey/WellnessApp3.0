@@ -33,7 +33,6 @@ function Dividerform() {
               iconPosition="left"
               label="Email"
               placeholder="Email"
-              
             />
             <Form.Input
               icon="lock"
