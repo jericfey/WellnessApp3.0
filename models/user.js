@@ -20,6 +20,7 @@ const userSchema = new Schema({
     type: String,
     lowercase: true,
     required: [true, "can't be blank"],
+    unique: true,
   },
   password: { type: String, required: true },
   goalweight: {
