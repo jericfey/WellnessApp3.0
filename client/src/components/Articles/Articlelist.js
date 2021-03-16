@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Grid, Container, List } from "semantic-ui-react";
 
-
-function Articles() {
+function Articlelist() {
   const [articles, setArticles] = useState([]);
   const apiUrl =
     "https://health.gov/myhealthfinder/api/v3/topicsearch.json?categoryId=24,21";
@@ -16,8 +15,9 @@ function Articles() {
     axios
       .get(apiUrl)
       .then((res) => {
-        setArticles(res.data);
-        console.log(res.data);
+        setArticles(res.data.Result.Resources.Resource);
+        console.log(res.data.Result.Resources.Resource);
+
         // const articles = res.data;
         // return articles.map((article) => {
         //   return {
@@ -42,20 +42,22 @@ function Articles() {
                 </Card.Header>
               </Card.Content>
               <Card.Content textAlign="left">
-                {/* <div className="article-list">
+                <div className="article-list">
                   {articles.map((article, index) => {
                     return (
-                      <List link key={index}>
+                      <List link>
                         <List.Item
+                          key={index}
                           as="a"
-                          content={article.title}
-                          href={article.url}
+                          content={article.Title}
+                          href={article.AccessibleVersion}
                           target="_blank"
                         />
                       </List>
+                      // <div>{articles}</div>
                     );
                   })}
-                </div> */}
+                </div>
               </Card.Content>
             </Card>
           </Grid.Column>
@@ -65,4 +67,4 @@ function Articles() {
   );
 }
 
-export default Articles;
+export default Articlelist;
