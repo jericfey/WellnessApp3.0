@@ -4,7 +4,7 @@ import TopCards from "../components/TopCards";
 import Sidebar from "../components/Sidebar/sidebar";
 import ToDo from "../components/ToDo/todo";
 import UserCalendar from "../components/Calendar/Calendar";
-import Articles from "../components/Articles/Articles";
+import Articlelist from "../components/Articles/Articlelist";
 
 function Dashboard() {
   return (
@@ -13,7 +13,7 @@ function Dashboard() {
       <ToDo />
       <Sidebar />
       <UserCalendar />
-      <Articles />
+      <Articlelist />
     </div>
   );
 }
