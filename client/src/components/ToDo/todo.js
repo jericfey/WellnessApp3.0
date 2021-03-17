@@ -11,7 +11,7 @@ import {
 
 const CardExampleContentBlock = () => (
   <Container>
-    <Grid divided="vertically" floated="center" textAlign="center">
+    <Grid floated="center" textAlign="center">
       <Grid.Row>
         <Grid.Column>
           <Card>

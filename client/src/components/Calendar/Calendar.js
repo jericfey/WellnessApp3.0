@@ -9,8 +9,14 @@ function UserCalendar() {
     <Container>
       <Grid divided="vertically" floated="center" textAlign="center">
         <Grid.Row>
-          <Grid.Column>
-            <Card>
+          <Grid.Column width={8}>
+            <Card
+              color="blue"
+              style={{
+                height: "250px",
+                width: "100%",
+              }}
+            >
               <Card.Content>
                 <Card.Header textAlign="left">Calendar</Card.Header>
               </Card.Content>
