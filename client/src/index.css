@@ -10,8 +10,15 @@ body {
 
   justify-content: center;
 }
-.logoff {
-  margin-top: 510px;
+
+.ui.icon.button {
+  margin-top: 5px;
+
+}
+
+.team {
+  margin-bottom: 0px;
+  margin-top: 650px;
 }
 .cookie {
   border-radius: 25px;

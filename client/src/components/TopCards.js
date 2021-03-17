@@ -1,6 +1,8 @@
 import React from "react";
 import { Card, Icon, Container, Grid, Header, Meta } from "semantic-ui-react";
 
+import WeightModal from "./Currentweightform/WeightModal";
+
 function TopCards() {
   return (
     <Container>
@@ -11,6 +13,7 @@ function TopCards() {
             <Header>Current Weight</Header>
             {/* the current weight will actually be data pulled from the user */}
             <p>Weight(lbs)</p>
+            <WeightModal />
           </Grid.Column>
 
           <Grid.Column style={{ backgroundColor: "limegreen" }}>

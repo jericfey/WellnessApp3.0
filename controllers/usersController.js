@@ -11,26 +11,13 @@ module.exports = {
   },
   findById: function (req, res) {
     console.log(req.body);
-    db.User.findOne({ email: req.body.email })
+    db.User.findOne({ email: req.params.id })
       .then((dbUser) => {
-        bcrypt
-          .compare(dbUser.paswword, req.body.password)
-          .then((ok) => {
-            const user = dbUser.toJSON();
-            delete user.password;
-            res.cookie("user", user, {
-              //replace localhost with heroku app url for production
-              domain: "localhost",
-              httpOnly: true,
-              path: "/",
-            });
-            res.json({ ok });
-          })
-          .catch((err) => {
-            res.json({ ok: false });
-          });
+        console.log(dbUser);
+        res.json(dbUser);
       })
       .catch((err) => {
+        console.log(err);
         res.json({ ok: false });
       });
   },
@@ -45,9 +32,32 @@ module.exports = {
     });
   },
   update: function (req, res) {
-    db.User.findOneAndUpdate({ _id: req.params.id }, req.body)
+    db.User.findOneAndUpdate({ email: req.body.email }, req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
+  },
+  checkPassword: function (req, res) {
+    db.User.findOne({ email: req.body.email }).then((dbUser) => {
+      console.log("updating user", dbUser);
+      bcrypt
+        .compare(dbUser.password, req.body.password)
+        .then((ok) => {
+          const user = dbUser.toJSON();
+          delete user.password;
+          res.cookie("user", user, {
+            //replace localhost with heroku app url for production
+            domain: "localhost",
+            httpOnly: true,
+            path: "/",
+          });
+          res.json(true);
+        })
+
+        .catch((err) => {
+          console.log(err);
+          res.json({ ok: false });
+        });
+    });
   },
   remove: function (req, res) {
     db.User.findById({ _id: req.params.id })

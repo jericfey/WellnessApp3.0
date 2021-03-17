@@ -11,6 +11,9 @@ router
   .put(usersController.update)
   .delete(usersController.remove);
 
+  router.route("/auth")
+  .put(usersController.checkPassword)
+
 router.route("/login").post(usersController.findById);
 
 module.exports = router;

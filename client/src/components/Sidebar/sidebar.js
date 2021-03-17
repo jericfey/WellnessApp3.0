@@ -1,35 +1,48 @@
 import React from "react";
-import { MenuItem } from "semantic-ui-react";
-import { Icon, Menu, Sidebar } from "semantic-ui-react";
+import { Icon, Menu, Sidebar, MenuItem } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-const SidebarExampleVisible = () => (
+const UserSidebar = () => (
   <Sidebar
     as={Menu}
-    animation="overlay"
-    icon="labeled"
+    animation='overlay'
+    icon='labeled'
     inverted
     vertical
     visible
-    width="thin"
+    width='thin'
   >
-    <Menu.Item as="a">
-      <Icon name="fort awesome" />
+    <Link to="/dashboard">
+    <Menu.Item as='a'>
+      <Icon name='fort awesome' />
       Dashboard
     </Menu.Item>
-    <Menu.Item as="a">
-      <Icon name="user circle" />
+    </Link>
+    <Link to="/user">
+    <Menu.Item as='a'>
+      <Icon name='user circle' />
       Profile
     </Menu.Item>
-    <Menu.Item as="a">
-      <Icon name="bolt" />
+    </Link>
+    <Link to="/workoutform" >
+    <Menu.Item>
+      <Icon name='bolt' />
       New Workout
     </Menu.Item>
-    <MenuItem as="a" className="logoff">
-      <Icon name="sign out" />
-      <Link to="./pages/home">Logout</Link>
-    </MenuItem>
+    </Link>
+    <Link to="/team" >
+    <Menu.Item className="team">
+      <Icon name='group' />
+      Contact Us
+    </Menu.Item>
+    </Link>
+    <Link to='/' >
+      <MenuItem as='a' className='logoff'>
+        <Icon name='sign out' />
+        Logout
+      </MenuItem>
+    </Link>
   </Sidebar>
 );
 
-export default SidebarExampleVisible;
+export default UserSidebar;

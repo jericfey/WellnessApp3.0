@@ -6,6 +6,12 @@ import Login from "./login";
 function UserForm() {
   const [open, setOpen] = useState(false);
 
+  const [formObject, setFormObject] = useState("");
+
+  function userEmail(email) {
+    setFormObject(email);
+  }
+
   return (
     <Modal
       onClose={() => setOpen(false)}
@@ -16,11 +22,12 @@ function UserForm() {
       <Segment placeholder className='cookie'>
         <Grid columns={2} relaxed='very' stackable className='test'>
           <Grid.Column>
-            <Login />
+            <Login
+            userEmail={formObject} />
           </Grid.Column>
 
           <Grid.Column verticalAlign='middle'>
-            <Signup />
+            <Signup setUserEmail={userEmail} />
           </Grid.Column>
         </Grid>
         <Divider vertical>Or</Divider>
