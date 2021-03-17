@@ -45,16 +45,14 @@ function Articlelist() {
                 <div className="article-list">
                   {articles.map((article, index) => {
                     return (
-                      <List link>
+                      <List link key={index}>
                         <List.Item
-                          key={index}
                           as="a"
                           content={article.Title}
                           href={article.AccessibleVersion}
                           target="_blank"
                         />
                       </List>
-                      // <div>{articles}</div>
                     );
                   })}
                 </div>

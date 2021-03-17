@@ -25,19 +25,20 @@ const CardExampleContentBlock = () => (
               <Form>
                 <Form.Field>
                   <Checkbox
-                    controll={Checkbox}
+                    //function for checkboxes needs to be created
+                    // control={Checkbox}
                     label={<label>Go for a run</label>}
                   />
                 </Form.Field>
                 <Form.Field>
                   <Checkbox
-                    controll={Checkbox}
+                    // control={Checkbox}
                     label={<label>Eat more veggies</label>}
                   />
                 </Form.Field>
                 <Form.Field>
                   <Checkbox
-                    controll={Checkbox}
+                    // control={Checkbox}
                     label={<label>Walk 10,000 steps</label>}
                   />
                 </Form.Field>
