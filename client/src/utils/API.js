@@ -33,4 +33,7 @@ export default {
   saveWorkout: function (workoutData) {
     return axios.post("/api/workouts", workoutData);
   },
+  saveWeight: function (weightData) {
+    return axios.post("/api/weight", weightData);
+  },
 };

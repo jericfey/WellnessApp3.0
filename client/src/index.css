@@ -55,3 +55,7 @@ i {
 .cal {
   color: navy;
 }
+
+.cardstuff {
+  grid-column-gap: 30px;
+}

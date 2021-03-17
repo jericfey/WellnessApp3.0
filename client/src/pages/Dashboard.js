@@ -5,15 +5,23 @@ import Sidebar from "../components/Sidebar/sidebar";
 import ToDo from "../components/ToDo/todo";
 import UserCalendar from "../components/Calendar/Calendar";
 import Articlelist from "../components/Articles/Articlelist";
-
+import { Grid } from "semantic-ui-react";
+import Weight from "../components/Weight/graph2";
 function Dashboard() {
   return (
     <div>
       <TopCards />
-      <ToDo />
+      <Grid>
+        <Grid.Row columns={2}>
+          <ToDo />
+          <UserCalendar />
+        </Grid.Row>
+      </Grid>
+
       <Sidebar />
-      <UserCalendar />
+
       <Articlelist />
+      <Weight />
     </div>
   );
 }

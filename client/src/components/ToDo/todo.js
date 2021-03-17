@@ -1,17 +1,10 @@
 import React from "react";
 
-import {
-  Card,
-  Grid,
-  Container,
-  Input,
-  Checkbox,
-  Form,
-} from "semantic-ui-react";
+import { Card, Grid, Input, Checkbox, Form } from "semantic-ui-react";
 
 const CardExampleContentBlock = () => (
-  <Container>
-    <Grid floated="center" textAlign="center">
+  <div>
+    <Grid textAlign="center">
       <Grid.Row>
         <Grid.Column>
           <Card>
@@ -48,7 +41,7 @@ const CardExampleContentBlock = () => (
         </Grid.Column>
       </Grid.Row>
     </Grid>
-  </Container>
+  </div>
 );
 
 export default CardExampleContentBlock;

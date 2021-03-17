@@ -1,11 +1,11 @@
 import React from "react";
-import { Card, Icon, Container, Grid, Header, Meta } from "semantic-ui-react";
+import { Card, Icon, Container, Grid, Header } from "semantic-ui-react";
 
 function TopCards() {
   return (
     <Container>
-      <Grid celled="internally" width={3}>
-        <Grid.Row columns="equal">
+      <Grid>
+        <Grid.Row columns="equal" classname="cardstuff">
           <Grid.Column style={{ backgroundColor: "deepskyblue" }}>
             <Icon name="weight" size="huge" inverted color="grey" />
             <Header>Current Weight</Header>
