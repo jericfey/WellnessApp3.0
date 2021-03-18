@@ -32,7 +32,7 @@ function Articlelist() {
   }
 
   return (
-    <Segment floated="right">
+    <Segment floated="right" className="article">
       <Grid>
         <Grid.Row>
           <Grid.Column>

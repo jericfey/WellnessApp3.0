@@ -6,7 +6,7 @@ function UserCalendar() {
   const [value, onChange] = useState(new Date());
 
   return (
-    <Segment floated="right" style={{ width: "30%" }}>
+    <Segment style={{ width: "30%" }} className="cal">
       <Grid>
         <Grid.Row>
           <Grid.Column>
