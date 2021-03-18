@@ -64,9 +64,7 @@ function Dashboard(props) {
   return (
     <div>
       <Sidebar />
-
       <TopCards />
-
       <Articlelist />
       <UserCalendar />
       <ToDo />
