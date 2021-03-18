@@ -34,6 +34,7 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  // weights: [{ type: Schema.Types.ObjectId, ref: "Weight" }],
 });
 
 //Model of user going to user collection

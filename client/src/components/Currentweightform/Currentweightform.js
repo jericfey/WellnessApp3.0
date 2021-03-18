@@ -12,7 +12,7 @@ const Weightform = () => {
     setFormObject({ ...formObject, [name]: value });
   }
   //view the object form fields as they are entered
-  console.log("Weight: ", formObject);
+  // console.log("Weight: ", formObject);
 
   const addUserWeight = async (event) => {
     event.preventDefault();
@@ -22,7 +22,7 @@ const Weightform = () => {
     };
 
     axios({
-      url: "/api/users",
+      url: "/api/weight",
       method: "POST",
       data: weightPayload,
     })
@@ -43,21 +43,21 @@ const Weightform = () => {
 
   return (
     <Form>
-      <Header icon textAlign='center'>
-        <Icon name='weight' />
+      <Header icon textAlign="center">
+        <Icon name="weight" />
         Add Your Current Weight
       </Header>
       <Form.Input
-        name='weight'
-        icon='weight'
-        iconPosition='left'
-        placeholder='Current Weight'
-        type='text'
+        name="weight"
+        icon="weight"
+        iconPosition="left"
+        placeholder="Current Weight"
+        type="text"
         onChange={handleInputChange}
       />
       <Button
-        color='green'
-        content='Add Weight'
+        color="green"
+        content="Add Weight"
         onClick={addUserWeight}
       ></Button>
     </Form>
