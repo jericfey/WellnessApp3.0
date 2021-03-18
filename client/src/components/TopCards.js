@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Icon, Container, Grid, Header, Meta } from "semantic-ui-react";
+import { Card, Icon, Container, Grid, Header} from "semantic-ui-react";
 
 import WeightModal from "./Currentweightform/WeightModal";
 

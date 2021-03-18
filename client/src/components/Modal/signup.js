@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import axios from "axios";
 import { Button, Form, Header } from "semantic-ui-react";
-import { PromiseProvider } from "mongoose";
 
 function Signup(props) {
   const [formObject, setFormObject] = useState({
@@ -16,7 +15,7 @@ function Signup(props) {
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
-    props.setUserEmail(value)
+    props.setUserEmail(value);
   }
 
   console.log("First: ", formObject);
@@ -39,7 +38,7 @@ function Signup(props) {
     })
       .then(() => {
         // TODO return a status depending on that status if email already exists return alert, else alert with success and let direct them to login
-        
+
         console.log("createNewUser data has been sent to server");
         resetCreateUserInputs();
       })
@@ -60,13 +59,13 @@ function Signup(props) {
 
   return (
     <Form>
-      <Header textAlign='center'>Signup</Header>
+      <Header textAlign="center">Signup</Header>
       <Form.Field>
         <label>First name:</label>
         <input
-          name='firstname'
-          type='text'
-          placeholder='Bob'
+          name="firstname"
+          type="text"
+          placeholder="Bob"
           value={formObject.firstname}
           onChange={handleInputChange}
         />
@@ -74,9 +73,9 @@ function Signup(props) {
       <Form.Field>
         <label>Last name:</label>
         <input
-          name='lastname'
-          type='text'
-          placeholder='The Builder'
+          name="lastname"
+          type="text"
+          placeholder="The Builder"
           value={formObject.lastname}
           onChange={handleInputChange}
         />
@@ -84,9 +83,9 @@ function Signup(props) {
       <Form.Field>
         <label>Email:</label>
         <input
-          name='email'
-          type='text'
-          placeholder='Bob@bob.com'
+          name="email"
+          type="text"
+          placeholder="Bob@bob.com"
           value={formObject.email}
           onChange={handleInputChange}
         />
@@ -94,9 +93,9 @@ function Signup(props) {
       <Form.Field>
         <label>Password:</label>
         <input
-          name='password'
-          type='password'
-          placeholder='Password'
+          name="password"
+          type="password"
+          placeholder="Password"
           value={formObject.password}
           onChange={handleInputChange}
         />
@@ -104,15 +103,15 @@ function Signup(props) {
       <Form.Field>
         <label>Goal Weight:</label>
         <input
-          name='goalweight'
-          type='text'
-          placeholder='Weight'
+          name="goalweight"
+          type="text"
+          placeholder="Weight"
           value={formObject.goalweight}
           onChange={handleInputChange}
         />
       </Form.Field>
 
-      <Button onClick={createNewUser} content='Signup' primary />
+      <Button onClick={createNewUser} content="Signup" primary />
     </Form>
   );
 }
