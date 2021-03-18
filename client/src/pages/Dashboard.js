@@ -6,6 +6,7 @@ import ToDo from "../components/ToDo/todo";
 import UserCalendar from "../components/Calendar/Calendar";
 import Articlelist from "../components/Articles/Articlelist";
 import axios from "axios";
+import Weight from "../components/Weight/graph2";
 
 async function getUser(id) {
   const { data } = await axios.get(`/api/users/${id}`);
@@ -67,6 +68,7 @@ function Dashboard(props) {
       <ToDo />
       <Sidebar />
       <UserCalendar />
+      <Weight />
       <Articlelist />
     </div>
   );
