@@ -16,7 +16,7 @@ function Articlelist() {
       .get(apiUrl)
       .then((res) => {
         setArticles(res.data.Result.Resources.Resource);
-        console.log(res.data.Result.Resources.Resource);
+        // console.log(res.data.Result.Resources.Resource);
 
         // const articles = res.data;
         // return articles.map((article) => {
