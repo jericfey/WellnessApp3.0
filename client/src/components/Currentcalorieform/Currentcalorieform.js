@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Form, Header, Button, Icon } from "semantic-ui-react";
 
-const Weightform = () => {
+const Calorieform = () => {
   const [formObject, setFormObject] = useState({
-    weight: "",
+    calorie: "",
   });
 
   function handleInputChange(event) {
@@ -12,57 +12,57 @@ const Weightform = () => {
     setFormObject({ ...formObject, [name]: value });
   }
   //view the object form fields as they are entered
-  // console.log("Weight: ", formObject);
+  // console.log("Calorie: ", formObject);
 
-  const addUserWeight = async (event) => {
+  const addUserCalorie = async (event) => {
     event.preventDefault();
 
-    const weightPayload = {
-      weight: formObject.weight,
+    const caloriePayload = {
+      calorie: formObject.calorie,
     };
 
     axios({
-      url: "/api/weight",
+      url: "/api/calorie",
       method: "POST",
-      data: weightPayload,
+      data: caloriePayload,
     })
       .then(() => {
-        console.log("Current weight added!");
-        resetWeightInput();
+        console.log("Current calorie added!");
+        resetCalorieInput();
       })
       .catch(() => {
-        console.log("Current Weight not added!");
+        console.log("Current Calorie not added!");
       });
   };
 
-  const resetWeightInput = () => {
+  const resetCalorieInput = () => {
     setFormObject({
-      weight: "",
+      calorie: "",
     });
   };
 
   return (
     <Form>
       <Header icon textAlign="center">
-        <Icon name="weight" />
-        Add Your Current Weight
+        <Icon name="food" />
+        Add Your Current Calorie Intake Today
       </Header>
       <Form.Field>
         <input
-          name="weight"
+          name="calorie"
           type="text"
-          placeholder="Current Weight"
-          value={formObject.weight}
+          placeholder="Current Calorie"
+          value={formObject.calorie}
           onChange={handleInputChange}
         />
       </Form.Field>
       <Button
         color="green"
-        content="Add Weight"
-        onClick={addUserWeight}
+        content="Add Calorie"
+        onClick={addUserCalorie}
        ></Button>
     </Form>
   );
 };
 
-export default Weightform;
+export default Calorieform;

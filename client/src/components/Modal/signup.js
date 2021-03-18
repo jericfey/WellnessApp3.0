@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Button, Form, Header } from "semantic-ui-react";
 
@@ -36,17 +36,14 @@ function Signup(props) {
       method: "POST",
       data: newUserPayload,
     })
-
-      .then(({data}) => {
-        
-
+      .then(({ data }) => {
         console.log("createNewUser data has been sent to server");
         resetCreateUserInputs();
         if (data.ok) {
-          history.push(`/dashboard/${data.id}`)
+          history.push(`/dashboard/${data.id}`);
         }
       })
-      
+
       .catch(() => {
         console.log("Error sending createNewUser data to server");
       });
