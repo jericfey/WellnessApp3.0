@@ -8,13 +8,13 @@ class Weight extends React.Component {
     this.state = {
       data: {
         labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
+          "March 18",
+          "March 19",
+          "March 20",
+          "March 21",
+          "March 22",
+          "March 23",
+          "March 24",
         ],
         datasets: [
           {
@@ -52,12 +52,16 @@ class Weight extends React.Component {
   };
   render() {
     return (
-      <Segment floated="right" style={{ width: "50%", height: "100" }}>
+      <Segment
+        floated="right"
+        style={{ width: "50%", height: "100" }}
+        className="graph3"
+      >
         <Grid>
           <Grid.Row>
             <Grid.Column>
               <div>
-                <Header>Weight</Header>
+                <Header textAlign="center">Weight</Header>
                 {!this.state.rerender ? (
                   <Line
                     data={this.state.data}

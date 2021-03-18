@@ -1,5 +1,4 @@
 import React from "react";
-import { Segment } from "semantic-ui-react";
 
 import {
   Card,
@@ -12,19 +11,19 @@ import {
 
 function ToDo() {
   return (
-    <Segment floated="right">
-      <Grid textAlign="center" style={{ left: "100px" }}>
+    <Container floated="center" style={{ width: "30%" }}>
+      <Grid>
         <Grid.Row>
           <Grid.Column>
-            <Card>
+            <Card className="todo">
               <Card.Content>
-                <Card.Header textAlign="left" className="todo">
+                <Card.Header textAlign="left">
                   To Do List:
                   <Input placeholder="Add..." />
                 </Card.Header>
               </Card.Content>
               <Card.Content textAlign="left">
-                <Form>
+                <Form style={{ padding: "0em" }}>
                   <Form.Field>
                     <Checkbox
                       //function for checkboxes needs to be created
@@ -50,7 +49,7 @@ function ToDo() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </Segment>
+    </Container>
   );
 }
 export default ToDo;

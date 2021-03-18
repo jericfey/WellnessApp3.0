@@ -17,19 +17,19 @@ body {
 
 .team {
   margin-bottom: 0px;
-  margin-top: 650px;
+  margin-top: 490px;
 }
 .cookie {
   border-radius: 25px;
 }
 
-.todo {
-  margin-top: 5%;
-}
-
 .logo {
   margin-bottom: -5%;
   border-radius: 25px;
+}
+
+.run {
+  height: 50px;
 }
 
 .slogan {
@@ -39,10 +39,6 @@ body {
 
 .test {
   background-color: white;
-}
-
-.todolo {
-  background-color: cornflowerblue;
 }
 
 i {
@@ -59,4 +55,28 @@ i {
 
 .topcards {
   column-gap: 3rem;
+  position: relative;
+  left: 80px;
+}
+
+.cal {
+  position: relative;
+  left: 200px;
+}
+
+.todo {
+  margin-top: 5%;
+  left: 190px;
+  bottom: 213px;
+}
+
+.article {
+  position: relative;
+  right: 50px;
+}
+
+.graph3 {
+  position: relative;
+  right: 130px;
+  bottom: 200px;
 }

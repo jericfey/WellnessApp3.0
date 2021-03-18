@@ -18,13 +18,8 @@ const UserSidebar = () => (
         Dashboard
       </Menu.Item>
     </Link>
-    <Link to="/user">
-      <Menu.Item as="a">
-        <Icon name="user circle" />
-        Profile
-      </Menu.Item>
-    </Link>
-    <Link to="/workoutform">
+
+    <Link to="/workouts">
       <Menu.Item>
         <Icon name="bolt" />
         Workouts
