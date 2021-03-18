@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, Grid, Container, List, Header } from "semantic-ui-react";
+import { Grid, List, Header } from "semantic-ui-react";
 import { Segment } from "semantic-ui-react";
 
 function Articlelist() {
