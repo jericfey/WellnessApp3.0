@@ -47,19 +47,20 @@ const Weightform = () => {
         <Icon name="weight" />
         Add Your Current Weight
       </Header>
-      <Form.Input
-        name="weight"
-        icon="weight"
-        iconPosition="left"
-        placeholder="Current Weight"
-        type="text"
-        onChange={handleInputChange}
-      />
+      <Form.Field>
+        <input
+          name="weight"
+          type="text"
+          placeholder="Current Weight"
+          value={formObject.weight}
+          onChange={handleInputChange}
+        />
+      </Form.Field>
       <Button
         color="green"
         content="Add Weight"
         onClick={addUserWeight}
-      ></Button>
+       ></Button>
     </Form>
   );
 };

@@ -18,7 +18,7 @@ function Signup(props) {
     props.setUserEmail(value);
   }
 
-  console.log("First: ", formObject);
+  // console.log("First: ", formObject);
 
   const createNewUser = async (event) => {
     event.preventDefault();
