@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Icon, Container, Grid, Header} from "semantic-ui-react";
-
+import { Card, Icon, Container, Grid, Header } from "semantic-ui-react";
+import Caloriemodal from "./Currentcalorieform/Caloriemodal";
 import WeightModal from "./Currentweightform/WeightModal";
 
 function TopCards() {
@@ -28,6 +28,7 @@ function TopCards() {
             <Header>Calorie Intake</Header>
             {/* the calorie intake will actually be data pulled from the user */}
             <Card.Meta>Calories</Card.Meta>
+            <Caloriemodal />
           </Grid.Column>
         </Grid.Row>
       </Grid>
