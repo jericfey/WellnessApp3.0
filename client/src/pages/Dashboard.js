@@ -63,13 +63,12 @@ function Dashboard(props) {
 
   return (
     <div>
-      <TopCards />
-      {/* // goalweight = {value.goalweight} /> */}
-      <ToDo />
       <Sidebar />
-      <UserCalendar />
-      <Weight />
+      <TopCards />
       <Articlelist />
+      <UserCalendar />
+      <ToDo />
+      <Weight />
     </div>
   );
 }

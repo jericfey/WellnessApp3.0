@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, Grid, Container, List } from "semantic-ui-react";
+import { Card, Grid, Container, List, Header } from "semantic-ui-react";
+import { Segment } from "semantic-ui-react";
 
 function Articlelist() {
   const [articles, setArticles] = useState([]);
@@ -31,37 +32,38 @@ function Articlelist() {
   }
 
   return (
-    <Container>
-      <Grid divided="vertically" floated="center" textAlign="center">
+    <Segment floated="right">
+      <Grid>
         <Grid.Row>
           <Grid.Column>
-            <Card>
-              <Card.Content>
-                <Card.Header textAlign="left" className="todo">
-                  Health & Wellness Articles:
-                </Card.Header>
-              </Card.Content>
-              <Card.Content textAlign="left">
-                <div className="article-list">
-                  {articles.map((article, index) => {
-                    return (
-                      <List link key={index}>
-                        <List.Item
-                          as="a"
-                          content={article.Title}
-                          href={article.AccessibleVersion}
-                          target="_blank"
-                        />
-                      </List>
-                    );
-                  })}
-                </div>
-              </Card.Content>
-            </Card>
+            <Header
+              textAlign="left"
+              as="h3"
+              textAlign="center"
+              style={{ color: "black" }}
+            >
+              Health & Wellness Articles:
+            </Header>
+            <List ordered>
+              <div className="article-list" textAlign="left">
+                {articles.map((article, index) => {
+                  return (
+                    <List link key={index}>
+                      <List.Item
+                        as="a"
+                        content={article.Title}
+                        href={article.AccessibleVersion}
+                        target="_blank"
+                      />
+                    </List>
+                  );
+                })}
+              </div>
+            </List>
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </Container>
+    </Segment>
   );
 }
 

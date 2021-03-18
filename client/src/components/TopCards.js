@@ -6,32 +6,34 @@ import WeightModal from "./Currentweightform/WeightModal";
 function TopCards(props) {
   return (
     <Container>
-      <Grid celled="internally" width={3}>
-        <Grid.Row columns="equal">
-          <Grid.Column style={{ backgroundColor: "deepskyblue" }}>
+      <Card.Group className="topcards">
+        <Card style={{ backgroundColor: "deepskyblue" }}>
+          <Card.Content>
             <Icon name="weight" size="huge" inverted color="grey" />
             <Header>Current Weight</Header>
             {/* the current weight will actually be data pulled from the user */}
             <p>Weight(lbs)</p>
             <WeightModal />
-          </Grid.Column>
-
-          <Grid.Column style={{ backgroundColor: "limegreen" }}>
+          </Card.Content>
+        </Card>
+        <Card style={{ backgroundColor: "limegreen" }}>
+          <Card.Content>
             <Icon name="trophy" size="huge" inverted color="grey" />
-            <Header>{props.goalweight}</Header>
+            <Header>Goal Weight{props.goalweight}</Header>
             {/* the ideal weight will actually be data pulled from the user */}
             <Card.Meta>Weight(lbs)</Card.Meta>
-          </Grid.Column>
-
-          <Grid.Column style={{ backgroundColor: "gold" }}>
+          </Card.Content>
+        </Card>
+        <Card style={{ backgroundColor: "gold" }}>
+          <Card.Content>
             <Icon name="food" size="huge" inverted color="grey" />
             <Header>Calorie Intake</Header>
             {/* the calorie intake will actually be data pulled from the user */}
             <Card.Meta>Calories</Card.Meta>
             <Caloriemodal />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+          </Card.Content>
+        </Card>
+      </Card.Group>
     </Container>
   );
 }

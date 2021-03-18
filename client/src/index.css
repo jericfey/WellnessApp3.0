@@ -13,7 +13,6 @@ body {
 
 .ui.icon.button {
   margin-top: 5px;
-
 }
 
 .team {
@@ -54,11 +53,10 @@ i {
   margin: 10px;
 }
 
-.topC {
-  position: relative;
-  top: 10px;
+.logoff {
+  margin-bottom: 15%;
 }
 
-.cal {
-  color: navy;
+.topcards {
+  column-gap: 3rem;
 }
