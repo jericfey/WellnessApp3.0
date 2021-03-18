@@ -7,8 +7,6 @@ import UserCalendar from "../components/Calendar/Calendar";
 import Articlelist from "../components/Articles/Articlelist";
 import axios from "axios";
 import Weight from "../components/Weight/graph2";
-import { Grid } from "semantic-ui-react";
-import { Container } from "react-bootstrap";
 
 async function getUser(id) {
   const { data } = await axios.get(`/api/users/${id}`);
