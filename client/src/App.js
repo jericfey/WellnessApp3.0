@@ -13,17 +13,19 @@ import "./index.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { fas, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import UserSidebar from "./components/Sidebar/sidebar";
 
 library.add(fab, faGithub, faLinkedin, fas, faPaperPlane);
 
 function App() {
   return (
     <Router>
+        <UserSidebar />
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/team" component={Team} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard/:id" component={Dashboard} />
           <Route exact path="/user" component={Users} />
           <Route exact path="/Workoutform" component={Workoutform} />
           <Route exact path="/workout" component={Workouts} />
