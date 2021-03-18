@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {Container} from "semantic-ui-react"
 
 const Workoutform = () => {
   const [formObject, setFormObject] = useState({
@@ -53,7 +54,7 @@ const Workoutform = () => {
   };
 
   return (
-    <div>
+    <Container>
       <h1>Add a Workout</h1>
       <form onSubmit={createNewWorkout}>
         <div className="form-input">
@@ -103,7 +104,7 @@ const Workoutform = () => {
         </div>
         <button>Submit</button>
       </form>
-    </div>
+    </Container>
   );
 };
 

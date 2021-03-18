@@ -3,7 +3,7 @@ import { Card, Icon, Container, Grid, Header } from "semantic-ui-react";
 import Caloriemodal from "./Currentcalorieform/Caloriemodal";
 import WeightModal from "./Currentweightform/WeightModal";
 
-function TopCards() {
+function TopCards(props) {
   return (
     <Container>
       <Grid celled="internally" width={3}>
@@ -18,7 +18,7 @@ function TopCards() {
 
           <Grid.Column style={{ backgroundColor: "limegreen" }}>
             <Icon name="trophy" size="huge" inverted color="grey" />
-            <Header>Ideal Weight</Header>
+            <Header>{props.goalweight}</Header>
             {/* the ideal weight will actually be data pulled from the user */}
             <Card.Meta>Weight(lbs)</Card.Meta>
           </Grid.Column>

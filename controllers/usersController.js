@@ -11,7 +11,7 @@ module.exports = {
   },
   findById: function (req, res) {
     console.log(req.body);
-    db.User.findOne({ email: req.params.id })
+    db.User.findById(req.params.id)
       .then((dbUser) => {
         console.log(dbUser);
         res.json(dbUser);
@@ -26,7 +26,7 @@ module.exports = {
     bcrypt.genSalt(12).then((salt) => {
       bcrypt.hash(req.body.password, salt).then((hashpw) => {
         db.User.create({ ...req.body, password: hashpw }).then((dbUser) => {
-          res.json({ ok: true });
+          res.json({ ok: true, id: dbUser._id });
         });
       });
     });
@@ -50,7 +50,7 @@ module.exports = {
             httpOnly: true,
             path: "/",
           });
-          res.json(true);
+          res.json({ ok: true, id: user._id });
         })
 
         .catch((err) => {
