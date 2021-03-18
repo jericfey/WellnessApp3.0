@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import {useHistory} from "react-router-dom";
 import axios from "axios";
 import { Button, Form, Header } from "semantic-ui-react";
 
@@ -12,13 +12,13 @@ function Signup(props) {
     goalweight: "",
   });
 
+  const history = useHistory();
+
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
     props.setUserEmail(value);
   }
-
-  console.log("First: ", formObject);
 
   const createNewUser = async (event) => {
     event.preventDefault();
@@ -36,12 +36,17 @@ function Signup(props) {
       method: "POST",
       data: newUserPayload,
     })
-      .then(() => {
-        // TODO return a status depending on that status if email already exists return alert, else alert with success and let direct them to login
+
+      .then(({data}) => {
+        
 
         console.log("createNewUser data has been sent to server");
         resetCreateUserInputs();
+        if (data.ok) {
+          history.push(`/dashboard/${data.id}`)
+        }
       })
+      
       .catch(() => {
         console.log("Error sending createNewUser data to server");
       });

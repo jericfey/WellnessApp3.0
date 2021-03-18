@@ -9,6 +9,8 @@ function Login(props) {
     password: "",
   });
 
+  const history = useHistory();
+
   const [userFound, setUserFound] = useState("none");
   const [passwordChecked, setPasswordChecked] = useState(false);
   useEffect(() => {
@@ -43,16 +45,18 @@ function Login(props) {
     };
     console.log("email1", formObject.email);
     axios({
-      url: `/api/users/${formObject.email}`,
-      method: "GET",
+      url: "/api/users/auth",
+      method: "PUT",
+      // data: loginPayload
     })
       .then((user) => {
         //todo onsuccess redirect to dashboard. Dashboard specific to user.  If failed login alert email/password invalid
         console.log(user);
         setUserFound(user.data);
-        // // useHistory.push(".dashboard");
-        // // console.log("Login Successful");
-        // resetLoginUserInputs();
+        // if (user.ok) {
+        //   history.push(`/dashboard/${user.id}`)
+        // }
+      
       })
       .catch(() => {
         console.log("Login Denied");

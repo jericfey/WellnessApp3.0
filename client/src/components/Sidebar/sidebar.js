@@ -12,7 +12,7 @@ const UserSidebar = () => (
     visible
     width='thin'
   >
-    <Link to="/dashboard">
+    <Link to="/dashboard/:id">
     <Menu.Item as='a'>
       <Icon name='fort awesome' />
       Dashboard
