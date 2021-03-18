@@ -1,43 +1,16 @@
-import React, { useState, useEffect } from "react";
-import API from "../utils/API";
+import React from "react";
+import {Container} from "semantic-ui-react"
+import WorkoutCard from "../components/WorkoutCard"
+import Workoutform from "../components/Workoutform/Workoutform"
 
-const Data = () => {
-  const [workouts, setWorkouts] = useState([]);
-
-  useEffect(() => {
-    getWorkouts();
-  }, []);
-
-  function getWorkouts() {
-    API.getWorkouts()
-      .then((response) => {
-        setWorkouts(response.data);
-        console.log("Data has been received from the DB.");
-      })
-      .catch((err) => console.log(err));
-  }
+const Workouts = () => {
 
   return (
-    <div>
-      {workouts.length > 0 ? (
-        <div>
-          {workouts.map((workout) => {
-            return (
-              <div key={workout.index}>
-                <h3>{workout.name}</h3>
-                <p>Duration: {workout.duration}</p> |
-                <p>Weight: {workout.weight}</p>
-                <p>Reps: {workout.reps}</p> | <p>Sets: {workout.sets}</p>
-                <br />
-              </div>
-            );
-          })}
-        </div>
-      ) : (
-        <h3>No Results to Display</h3>
-      )}
-    </div>
+    <Container>
+      <Workoutform />
+      <WorkoutCard />
+    </Container>
   );
 };
 
-export default Data;
+export default Workouts;

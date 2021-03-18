@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {Container} from "semantic-ui-react"
+import { Container, Form, Button } from "semantic-ui-react";
 
 const Workoutform = () => {
   const [formObject, setFormObject] = useState({
@@ -19,7 +19,7 @@ const Workoutform = () => {
   console.log("Name: ", formObject);
 
   const createNewWorkout = (event) => {
-    event.preventDefault();
+    //event.preventDefault();
     //payload is the data to be sent to the server
     const payload = {
       name: formObject.name,
@@ -55,7 +55,57 @@ const Workoutform = () => {
 
   return (
     <Container>
-      <h1>Add a Workout</h1>
+      <Form onSubmit={createNewWorkout}>
+        <Form.Field>
+          <input
+            name='name'
+            onChange={handleInputChange}
+            value={formObject.name}
+            type='text'
+            placeholder='Exercise Type'
+          />
+        </Form.Field>
+        <Form.Field>
+          <input
+            name='duration'
+            onChange={handleInputChange}
+            value={formObject.duration}
+            type='text'
+            placeholder='Duration in Minutes'
+          />
+        </Form.Field>
+        <Form.Field>
+          <input
+            name='weight'
+            onChange={handleInputChange}
+            value={formObject.weight}
+            type='text'
+            placeholder='Weight in lbs'
+          />
+        </Form.Field>
+        <Form.Field>
+          <input
+            name='sets'
+            onChange={handleInputChange}
+            value={formObject.sets}
+            type='text'
+            placeholder='Sets'
+          />
+        </Form.Field>
+        <Form.Field>
+          <input
+            name='reps'
+            onChange={handleInputChange}
+            value={formObject.reps}
+            type='text'
+            placeholder='Reps'
+          />
+        </Form.Field>
+        <Button type='submit' >
+          Add Workout
+        </Button>
+      </Form>
+      {/* <h1>Add a Workout</h1>
       <form onSubmit={createNewWorkout}>
         <div className="form-input">
           <input
@@ -103,7 +153,7 @@ const Workoutform = () => {
           />
         </div>
         <button>Submit</button>
-      </form>
+      </form> */}
     </Container>
   );
 };
