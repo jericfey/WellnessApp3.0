@@ -18,7 +18,6 @@ const UserSidebar = () => (
         Dashboard
       </Menu.Item>
     </Link>
-
     <Link to="/workouts">
       <Menu.Item>
         <Icon name="bolt" />

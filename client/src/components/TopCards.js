@@ -19,7 +19,7 @@ function TopCards(props) {
         <Card style={{ backgroundColor: "limegreen" }}>
           <Card.Content>
             <Icon name="trophy" size="huge" inverted color="grey" />
-            <Header>Goal Weight{props.goalweight}</Header>
+            <Header>165</Header>
             {/* the ideal weight will actually be data pulled from the user */}
             <Card.Meta>Weight(lbs)</Card.Meta>
           </Card.Content>
