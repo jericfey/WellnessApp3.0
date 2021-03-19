@@ -47,15 +47,15 @@ function Login(props) {
     axios({
       url: "/api/users/auth",
       method: "PUT",
-      // data: loginPayload
+      data: loginPayload
     })
       .then((user) => {
         //todo onsuccess redirect to dashboard. Dashboard specific to user.  If failed login alert email/password invalid
         console.log(user);
         setUserFound(user.data);
-        // if (user.ok) {
-        //   history.push(`/dashboard/${user.id}`)
-        // }
+        if (user.data.loggedin) {
+          history.push(`/dashboard/${user.id}`)
+        }
       
       })
       .catch(() => {

@@ -7,7 +7,7 @@ function WorkoutCard() {
 
   useEffect(() => {
     getWorkouts();
-  }, [setWorkouts]);
+  }, []);
 
   function getWorkouts() {
     API.getWorkouts()
@@ -24,24 +24,28 @@ function WorkoutCard() {
       {workouts.length > 0 ? (
         <div>
           {workouts.map((workout, index) => {
-              return (
-            <Card key={index}>
-              <Card.Content>
-                <Card.Header>Exercise: {workout.name}</Card.Header>
-                <Card.Description>Time: {workout.duration} min</Card.Description>
-                <Card.Description>Weight: {workout.weight} lbs</Card.Description>
-                <Card.Description>Sets: {workout.sets}</Card.Description>
-                <Card.Description>Reps: {workout.reps}</Card.Description>
-                <Card.Description>Date: {workout.date}</Card.Description>
-              </Card.Content>
-            </Card>
-              );
+            return (
+              <Card key={index}>
+                <Card.Content>
+                  <Card.Header>Exercise: {workout.name}</Card.Header>
+                  <Card.Description>
+                    Time: {workout.duration} min
+                  </Card.Description>
+                  <Card.Description>
+                    Weight: {workout.weight} lbs
+                  </Card.Description>
+                  <Card.Description>Sets: {workout.sets}</Card.Description>
+                  <Card.Description>Reps: {workout.reps}</Card.Description>
+                  <Card.Description>Date: {workout.date}</Card.Description>
+                </Card.Content>
+              </Card>
+            );
           })}
         </div>
       ) : (
         <h3>
-          No Workouts to display. Put down the bag of Doritos and Mtn. Dew and
-          go the gym!
+          No Workouts to display. Put down the bag of Doritos and Mt. Dew and go
+          the gym!
         </h3>
       )}
     </Container>

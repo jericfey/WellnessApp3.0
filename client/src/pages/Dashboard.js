@@ -10,6 +10,7 @@ import Weight from "../components/Weight/graph2";
 
 async function getUser(id) {
   const { data } = await axios.get(`/api/users/${id}`);
+  console.log(data)
   return data;
 }
 
@@ -64,7 +65,8 @@ function Dashboard(props) {
   return (
     <div>
       <Sidebar />
-      <TopCards />
+      <TopCards 
+      goalweight={props.goalweight}/>
       <Articlelist />
       <UserCalendar />
       <ToDo />
